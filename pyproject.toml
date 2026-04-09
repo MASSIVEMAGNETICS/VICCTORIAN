@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "victor"
+version = "1.0.0"
+description = "Victor agent runtime — frontier production-grade AI agent loop."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+# Core runtime has NO mandatory third-party dependencies.
+# All stdlib (sqlite3, json, threading, signal, uuid, dataclasses, tomllib).
+dependencies = []
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+tomli = ["tomli>=2.0"]   # only needed for Python < 3.11
+
+[project.scripts]
+victor = "victor.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["victor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
