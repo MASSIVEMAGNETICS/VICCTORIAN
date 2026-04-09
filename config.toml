@@ -1,0 +1,31 @@
+# Victor agent runtime — sample configuration file.
+# All keys map to fields in victor.config.RuntimeConfig.
+# Env vars (VICTOR_*) and CLI flags override values here.
+
+[runtime]
+
+# --- Identity ---
+# run_id = ""                 # auto-generated UUID if empty
+
+# --- Agent loop ---
+tick_interval_s        = 1.0   # seconds between ticks
+max_ticks              = 0     # 0 = run forever; set e.g. 100 for a fixed run
+
+# --- Model ---
+embed_dim              = 256   # embedding dimensionality
+fractal_depth          = 3     # maximum recursive blocks
+drop_path_prob         = 0.1   # probability of dropping a block per forward pass
+use_quantization       = false # CPU-only dynamic int8 quantization
+device                 = "cpu" # "cpu" or "cuda" (cuda requires GPU + no quantization)
+
+# --- Memory ---
+db_path                = "victor_memory.db"   # SQLite database file
+
+# --- Logging ---
+log_dir                = "victor_logs"         # directory for JSONL event files
+log_max_bytes          = 10485760              # 10 MB per file before rotation
+log_level              = "INFO"
+
+# --- Policy ---
+max_actions_per_minute = 30    # token-bucket rate limit for actions
+memory_retrieve_limit  = 5     # memories pulled per tick for context
