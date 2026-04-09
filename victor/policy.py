@@ -165,7 +165,7 @@ class Planner:
         telemetry: "ModelTelemetry",
         memories: list["Memory"],
     ) -> Action:
-        # --- Periodic ASK_USER ---
+        # --- Periodic ASK_USER (every 50 ticks, starting at tick 50) ---
         if tick > 0 and tick % 50 == 0:
             return Action(
                 kind=ActionKind.ASK_USER,

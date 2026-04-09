@@ -110,11 +110,10 @@ class TestMemoryStoreSearch(unittest.TestCase):
         self.assertTrue(any("cat" in t for t in texts))
         store.close()
 
-    def test_search_no_matches_returns_recent(self) -> None:
+    def test_search_no_matches_returns_empty(self) -> None:
         store = self._make_store()
-        # "xyzzy" won't match anything; fallback to retrieve_recent
+        # "xyzzy" won't match any record; LIKE scan returns no rows → empty list
         results = store.search_text("xyzzy", limit=5)
-        # Should still return empty because no LIKE matches
         self.assertEqual(results, [])
         store.close()
 

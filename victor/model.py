@@ -182,8 +182,9 @@ if _TORCH_AVAILABLE:
             output = x
             skipped = 0
             for i in range(adaptive_depth):
-                # Use torch RNG for reproducibility with manual_seed
-                drop = torch.rand(1, device=x.device).item()
+                # Use torch RNG for drop-path reproducibility with manual_seed.
+                # torch.rand(1) keeps the value on CPU since we extract it immediately.
+                drop = torch.rand(1).item()
                 if drop > self.drop_path_prob:
                     if self.training and torch.is_grad_enabled():
                         # Checkpointing only helps during backprop
