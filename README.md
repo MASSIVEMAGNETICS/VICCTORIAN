@@ -1,6 +1,32 @@
-# thanos — Victor Agent Runtime
+# VICCTORIAN — Victor Agent Runtime
 
-> **Frontier, production-grade, headless AI agent runtime** built on a deterministic tick loop, persistent SQLite memory, structured JSONL telemetry, and an adaptive fractal neural core.
+> **Headless AI agent runtime** built on a deterministic tick loop, persistent SQLite memory,
+> structured JSONL telemetry, and an adaptive fractal neural core.
+> Part of the [MASSIVEMAGNETICS](https://github.com/MASSIVEMAGNETICS) ecosystem.
+
+---
+
+## Project Status
+
+**🚧 Experimental / Work-in-Progress**
+
+VICCTORIAN is the canonical runtime kernel for the MASSIVEMAGNETICS agent ecosystem.
+Core architecture is stable and covered by tests; the API may change before a 1.0 release.
+
+---
+
+## Roadmap
+
+- [x] Deterministic tick loop (Sense → Retrieve → Think → Decide → Act → Reflect → Store)
+- [x] SQLite persistent memory store
+- [x] Structured JSONL telemetry with log rotation
+- [x] Fractal neural core (`FractalLayerV2`, torch optional)
+- [x] CLI entry points (`vicctorian run / inspect / replay`)
+- [x] GitHub Actions CI (lint + test)
+- [ ] Web UI / hosted demo (Vercel / Fly)
+- [ ] Plugin / tool-call API
+- [ ] Multi-agent coordination layer
+- [ ] Packaged release to PyPI
 
 ---
 
@@ -62,29 +88,32 @@ pip install torch
 ### Run the agent
 
 ```bash
-# Using the default config
+# Using the entry-point command (installed with the package)
+vicctorian run
+
+# Or equivalently via Python module
 python -m victor run
 
 # Using a custom config file
-python -m victor run --config config.toml
+vicctorian run --config config.toml
 
-# Fixed number of ticks
-python -m victor run --ticks 50
+# Fixed number of ticks (great for demos)
+vicctorian run --ticks 10
 
 # Override device and DB path
-python -m victor run --device cpu --db /tmp/victor.db
+vicctorian run --device cpu --db /tmp/victor.db
 ```
 
 ### Inspect memories
 
 ```bash
-python -m victor inspect --db victor_memory.db --last 20
+vicctorian inspect --db victor_memory.db --last 20
 ```
 
 ### Replay events from a past run
 
 ```bash
-python -m victor replay --run-id <uuid> --log-dir victor_logs
+vicctorian replay --run-id <uuid> --log-dir victor_logs
 ```
 
 ---
@@ -196,11 +225,14 @@ print(model.telemetry)
 ## Tests
 
 ```bash
-pip install pytest
+pip install pytest ruff
 pytest tests/ -v
+ruff check victor/ tests/
 ```
 
 Model tests are automatically skipped when `torch` is not installed.
+
+CI runs automatically on every push/PR via GitHub Actions.
 
 ---
 

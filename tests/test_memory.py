@@ -55,7 +55,7 @@ class TestMemoryStoreBasic(unittest.TestCase):
     def test_links_round_trip(self) -> None:
         store = self._make_store()
         mid1 = store.store_memory(kind="a", text="first")
-        mid2 = store.store_memory(kind="b", text="second", links=[mid1])
+        mid2 = store.store_memory(kind="b", text="second", links=[mid1])  # noqa: F841
         m = store.retrieve_recent(1)[0]
         self.assertIn(mid1, m.links)
         store.close()
