@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Policy / planner for the Victor agent runtime.
 
 Converts model telemetry + retrieved memories into a structured :class:`Action`

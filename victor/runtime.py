@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Victor agent runtime — headless deterministic tick loop.
 
 Tick pipeline

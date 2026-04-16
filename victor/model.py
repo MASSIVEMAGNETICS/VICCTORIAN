@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Production FractalLayerV2 neural model.
 
 Key production fixes over the prototype:

@@ -5,10 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "victor"
 version = "1.0.0"
-description = "Victor agent runtime — frontier production-grade AI agent loop."
+description = "VICTOR agent runtime — frontier production-grade AI agent loop. A MASSIVEMAGNETICS product."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
+license = { text = "All rights reserved. Copyright (c) 2026 MASSIVEMAGNETICS." }
+authors = [{ name = "MASSIVEMAGNETICS" }]
 
 # Core runtime has NO mandatory third-party dependencies.
 # All stdlib (sqlite3, json, threading, signal, uuid, dataclasses, tomllib).
@@ -17,6 +18,10 @@ dependencies = []
 [project.optional-dependencies]
 torch = ["torch>=2.0"]
 tomli = ["tomli>=2.0"]   # only needed for Python < 3.11
+
+[project.urls]
+Homepage = "https://github.com/MASSIVEMAGNETICS/VICCTORIAN"
+Source = "https://github.com/MASSIVEMAGNETICS/VICCTORIAN"
 
 [project.scripts]
 victor = "victor.__main__:main"

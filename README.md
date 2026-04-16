@@ -1,8 +1,17 @@
-# VICCTORIAN — Victor Agent Runtime
+# VICTOR — Agent Runtime
 
-> **Headless AI agent runtime** built on a deterministic tick loop, persistent SQLite memory,
-> structured JSONL telemetry, and an adaptive fractal neural core.
-> Part of the [MASSIVEMAGNETICS](https://github.com/MASSIVEMAGNETICS) ecosystem.
+> A [MASSIVEMAGNETICS](https://github.com/MASSIVEMAGNETICS) product · Repository: `VICCTORIAN`
+
+**VICTOR** is a frontier, production-grade, headless AI agent runtime built on a deterministic tick loop, persistent SQLite memory, structured JSONL telemetry, and an adaptive fractal neural core.
+
+### Ecosystem
+
+```
+MASSIVEMAGNETICS          ← master ecosystem / company root
+└── VICTOR                ← flagship runtime family (this repo: VICCTORIAN)
+```
+
+The `VICCTORIAN` repository is the canonical monorepo for the VICTOR runtime. The installable Python package name is `victor`.
 
 ---
 
@@ -246,3 +255,7 @@ CI runs automatically on every push/PR via GitHub Actions.
 | `ASK_USER` | Every 50 ticks |
 
 All actions pass through a token-bucket rate limiter (`max_actions_per_minute`).
+
+---
+
+© 2026 MASSIVEMAGNETICS. All rights reserved. VICTOR is a proprietary product of MASSIVEMAGNETICS.

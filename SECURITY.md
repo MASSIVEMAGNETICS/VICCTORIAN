@@ -1,5 +1,7 @@
 # Security Policy
 
+VICTOR is a proprietary product of MASSIVEMAGNETICS.
+
 ## Supported Versions
 
 | Version | Supported |
