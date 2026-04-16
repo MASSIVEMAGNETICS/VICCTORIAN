@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Structured JSONL event logger with daily file naming and size rotation.
 
 Every event is a single JSON line with the fields:

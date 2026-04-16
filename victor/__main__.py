@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """CLI entrypoints for the Victor agent runtime.
 
 Usage

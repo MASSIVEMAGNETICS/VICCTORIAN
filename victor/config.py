@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Configuration loading for the Victor agent runtime.
 
 Priority (lowest → highest): defaults → TOML file → environment variables → CLI args.

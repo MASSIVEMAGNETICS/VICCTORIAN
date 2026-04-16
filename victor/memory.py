@@ -1,3 +1,4 @@
+# Copyright (c) 2026 MASSIVEMAGNETICS. All rights reserved.
 """Persistent memory store backed by SQLite.
 
 Schema
