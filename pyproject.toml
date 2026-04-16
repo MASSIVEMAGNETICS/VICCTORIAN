@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "victor"
@@ -20,6 +20,7 @@ tomli = ["tomli>=2.0"]   # only needed for Python < 3.11
 
 [project.scripts]
 victor = "victor.__main__:main"
+vicctorian = "victor.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -28,3 +29,11 @@ include = ["victor*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
